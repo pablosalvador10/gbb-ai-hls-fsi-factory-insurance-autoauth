@@ -10,12 +10,7 @@
 ## 📚 Table of Contents
 
 - [Overview](#-overview)
-- [Introducing AutoAuth](#-introducing-autoauth)
-- [Why This Repository?](#-why-this-repository)
-- [Quick Start](#-quick-start)
-    - [End-to-End Deployment Using AZD](https://pablosalvador10.github.io/gbb-ai-hls-factory-prior-auth/azd_deployment.html)
-    - [PriorAuth SDK](#priorauth-sdk)
-- [What's Next?](#-whats-next)
+- [Introducing AutoAuth for the Insurance Industry](#-introducing-autoauth-for-the-insurance-industry)
 - [Contributors & License](#-contributors--license)
 
 ## 🌍 Overview
@@ -26,7 +21,7 @@ Insurance claim processing can be slow and labor-intensive, involving manual rev
 - **Slower Turnaround**: Delays in approvals directly impact customer satisfaction and can lead to increased escalations.  
 - **Policy Complexity**: Each claim must be evaluated against varying policy guidelines, which can be time-consuming without automation.
 
-NextGenClaims leverages Azure AI to bring an **intelligent, automated** approach—reducing human overhead, cutting costs, and accelerating claims outcomes.
+AutoAuth leverages Azure AI to bring an **intelligent, automated** approach—reducing human overhead, cutting costs, and accelerating claims outcomes.
 
 **Note:** This solution builds on proven SOTA AI Azure services and techniques like OCR, retrieval-augmented generation (RAG), and agentic workflows to streamline claim reviews.
 
