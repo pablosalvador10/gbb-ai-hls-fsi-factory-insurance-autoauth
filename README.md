@@ -1,4 +1,4 @@
-# 🤖 AutoAuth: Streamlining Claims processing with Azure AI
+# 🤖 AutoAuth: Streamlining Claims Processing with Azure AI
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![GitHub stars](https://img.shields.io/github/stars/pablosalvador10/gbb-ai-hls-fsi-factory-claims-autoauth?style=social)
