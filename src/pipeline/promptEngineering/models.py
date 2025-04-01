@@ -1,91 +1,144 @@
 from pydantic import BaseModel, Field
+from typing import List, Optional
 
-
-class PhysicianContact(BaseModel):
+class PolicyLevelInformation(BaseModel):
     """
-    Represents the contact information for a physician.
+    Represents high-level policy inputs (term, effective date, etc.).
     """
+    policy_effective_date: str = Field(default="Not provided", alias="policy_effective_date")
+    policy_term: str = Field(default="Not provided", alias="policy_term")
+    policy_type: str = Field(default="Not provided", alias="policy_type")
+    binding_date_time: str = Field(default="Not provided", alias="binding_date_time")
+    policy_payment_plan: str = Field(default="Not provided", alias="policy_payment_plan")
 
-    office_phone: str = Field(default="Not provided", alias="office_phone")
-    fax: str = Field(default="Not provided", alias="fax")
-    office_address: str = Field(default="Not provided", alias="office_address")
+    # Signatures / acknowledgments
+    applicant_signature: str = Field(default="Not provided", alias="applicant_signature")
+    agent_signature: str = Field(default="Not provided", alias="agent_signature")
+    um_uim_form: str = Field(default="Not provided", alias="um_uim_form")
+    named_driver_exclusion_form: str = Field(default="Not provided", alias="named_driver_exclusion_form")
+    misrep_disclosure: str = Field(default="Not provided", alias="misrep_disclosure")
 
 
-class PhysicianInformation(BaseModel):
+class ApplicantInformation(BaseModel):
     """
-    Represents the information related to a physician.
+    Represents the primary applicant's details.
     """
+    applicant_name: str = Field(default="Not provided", alias="applicant_name")
+    applicant_dob: str = Field(default="Not provided", alias="applicant_dob")
+    applicant_id: str = Field(default="Not provided", alias="applicant_id")
+    applicant_address: str = Field(default="Not provided", alias="applicant_address")
+    applicant_mailing_address: str = Field(default="Not provided", alias="applicant_mailing_address")
+    applicant_phone: str = Field(default="Not provided", alias="applicant_phone")
+    applicant_email: str = Field(default="Not provided", alias="applicant_email")
+    applicant_ssn: str = Field(default="Not provided", alias="applicant_ssn")
+    applicant_marital_status: str = Field(default="Not provided", alias="applicant_marital_status")
+    applicant_military_status: str = Field(default="Not provided", alias="applicant_military_status")
+    applicant_homeowner_status: str = Field(default="Not provided", alias="applicant_homeowner_status")
 
-    physician_name: str = Field(default="Not provided", alias="physician_name")
-    specialty: str = Field(default="Not provided", alias="specialty")
-    physician_contact: PhysicianContact = Field(
-        default_factory=PhysicianContact, alias="physician_contact"
-    )
 
-
-class PatientInformation(BaseModel):
+class DriverDetail(BaseModel):
     """
-    Represents the information related to a patient.
+    Represents a single driver's details.
     """
-
-    patient_name: str = Field(default="Not provided", alias="patient_name")
-    patient_date_of_birth: str = Field(
-        default="Not provided", alias="patient_date_of_birth"
+    driver_name: str = Field(default="Not provided", alias="driver_name")
+    driver_dob: str = Field(default="Not provided", alias="driver_dob")
+    driver_relationship: str = Field(default="Not provided", alias="driver_relationship")
+    driver_license_state: str = Field(default="Not provided", alias="driver_license_state")
+    driver_license_number: str = Field(default="Not provided", alias="driver_license_number")
+    driver_license_status: str = Field(default="Not provided", alias="driver_license_status")
+    driver_sr22: str = Field(default="Not provided", alias="driver_sr22")  # Yes/No
+    driver_accident_violation_history: str = Field(
+        default="Not provided", alias="driver_accident_violation_history"
     )
-    patient_id: str = Field(default="Not provided", alias="patient_id")
-    patient_address: str = Field(default="Not provided", alias="patient_address")
-    patient_phone_number: str = Field(
-        default="Not provided", alias="patient_phone_number"
-    )
+    driver_military_status: str = Field(default="Not provided", alias="driver_military_status")
+    driver_excluded: str = Field(default="Not provided", alias="driver_excluded")  # Yes/No
 
 
-class TreatmentRequest(BaseModel):
+class VehicleDetail(BaseModel):
     """
-    Represents a request for a specific treatment or medication.
+    Represents a single vehicle's details.
     """
-
-    name_of_medication_or_procedure: str = Field(
-        default="Not provided", alias="name_of_medication_or_procedure"
+    vehicle_year: str = Field(default="Not provided", alias="vehicle_year")
+    vehicle_make: str = Field(default="Not provided", alias="vehicle_make")
+    vehicle_model: str = Field(default="Not provided", alias="vehicle_model")
+    vehicle_vin: str = Field(default="Not provided", alias="vehicle_vin")
+    vehicle_ownership: str = Field(default="Not provided", alias="vehicle_ownership")
+    vehicle_garaging_address: str = Field(
+        default="Not provided", alias="vehicle_garaging_address"
     )
-    code_of_medication_or_procedure: str = Field(
-        default="Not provided", alias="code_of_medication_or_procedure"
-    )
-    dosage: str = Field(default="Not provided", alias="dosage")
-    duration: str = Field(default="Not provided", alias="duration")
-    rationale: str = Field(default="Not provided", alias="rationale")
-    presumed_eligibility: str = Field(
-        default="Not provided", alias="presumed_eligibility"
-    )
+    vehicle_usage: str = Field(default="Not provided", alias="vehicle_usage")
+    vehicle_existing_damage: str = Field(default="Not provided", alias="vehicle_existing_damage")
+    vehicle_age: str = Field(default="Not provided", alias="vehicle_age")
+    vehicle_modifications: str = Field(default="Not provided", alias="vehicle_modifications")
+    vehicle_salvage_title: str = Field(default="Not provided", alias="vehicle_salvage_title")
+    vehicle_months_in_ohio: str = Field(default="Not provided", alias="vehicle_months_in_ohio")
+    vehicle_class: str = Field(default="Not provided", alias="vehicle_class")
+    vehicle_prohibited_make: str = Field(default="Not provided", alias="vehicle_prohibited_make")
 
 
-class ClinicalInformation(BaseModel):
+class CoverageSelections(BaseModel):
     """
-    Represents the clinical information related to a patient's treatment.
+    Represents coverage selection details.
     """
+    coverage_liability_limits: str = Field(default="Not provided", alias="coverage_liability_limits")
+    coverage_um_uim: str = Field(default="Not provided", alias="coverage_um_uim")
+    coverage_comp_deductible: str = Field(default="Not provided", alias="coverage_comp_deductible")
+    coverage_collision_deductible: str = Field(
+        default="Not provided", alias="coverage_collision_deductible"
+    )
+    coverage_comp_collision_eligible: str = Field(
+        default="Not provided", alias="coverage_comp_collision_eligible"
+    )
+    coverage_um_pd: str = Field(default="Not provided", alias="coverage_um_pd")
+    coverage_med_pay: str = Field(default="Not provided", alias="coverage_med_pay")
+    coverage_rental: str = Field(default="Not provided", alias="coverage_rental")
+    coverage_towing: str = Field(default="Not provided", alias="coverage_towing")
+    coverage_custom_equip: str = Field(default="Not provided", alias="coverage_custom_equip")
 
-    diagnosis: str = Field(default="Not provided", alias="diagnosis")
-    icd_10_code: str = Field(default="Not provided", alias="icd_10_code")
-    prior_treatments_and_results: str = Field(
-        default="Not provided", alias="prior_treatments_and_results"
+
+class DiscountInformation(BaseModel):
+    """
+    Represents all discount-related fields.
+    """
+    discount_prior_insurance: str = Field(default="Not provided", alias="discount_prior_insurance")
+    discount_homeowner_proof: str = Field(default="Not provided", alias="discount_homeowner_proof")
+    discount_military_proof: str = Field(default="Not provided", alias="discount_military_proof")
+    discount_senior_defensive_driver: str = Field(
+        default="Not provided", alias="discount_senior_defensive_driver"
     )
-    specific_drugs_taken_and_failures: str = Field(
-        default="Not provided", alias="specific_drugs_taken_and_failures"
+    discount_auto_pay: str = Field(default="Not provided", alias="discount_auto_pay")
+    discount_paid_in_full: str = Field(default="Not provided", alias="discount_paid_in_full")
+    discount_advance_purchase: str = Field(
+        default="Not provided", alias="discount_advance_purchase"
     )
-    alternative_drugs_required: str = Field(
-        default="Not provided", alias="alternative_drugs_required"
+
+
+class SurchargeInformation(BaseModel):
+    """
+    Represents all surcharge-related fields.
+    """
+    surcharge_license_status: str = Field(default="Not provided", alias="surcharge_license_status")
+    surcharge_at_fault_accidents: str = Field(
+        default="Not provided", alias="surcharge_at_fault_accidents"
     )
-    relevant_lab_results_or_imaging: str = Field(
-        default="Not provided", alias="relevant_lab_results_or_imaging"
+    surcharge_major_violations: str = Field(
+        default="Not provided", alias="surcharge_major_violations"
     )
-    symptom_severity_and_impact: str = Field(
-        default="Not provided", alias="symptom_severity_and_impact"
+    surcharge_sr22: str = Field(default="Not provided", alias="surcharge_sr22")
+    surcharge_policy_activity: str = Field(default="Not provided", alias="surcharge_policy_activity")
+    surcharge_unacceptable_risk: str = Field(
+        default="Not provided", alias="surcharge_unacceptable_risk"
     )
-    prognosis_and_risk_if_not_approved: str = Field(
-        default="Not provided", alias="prognosis_and_risk_if_not_approved"
-    )
-    clinical_rationale_for_urgency: str = Field(
-        default="Not provided", alias="clinical_rationale_for_urgency"
-    )
-    treatment_request: TreatmentRequest = Field(
-        default_factory=TreatmentRequest, alias="treatment_request"
-    )
+
+class AutoUnderwritingData(BaseModel):
+    """
+    Top-level container holding all relevant auto underwriting fields.
+    """
+    policy_level: PolicyLevelInformation
+    applicant_info: ApplicantInformation
+    driver_info: List[DriverDetail]
+    vehicle_info: List[VehicleDetail]
+    coverage_selections: CoverageSelections
+    discounts: DiscountInformation
+    surcharges: SurchargeInformation
+    policy_text: str = Field(default="Not provided", alias="policy_text")

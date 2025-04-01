@@ -1,52 +1,46 @@
-# 🤖 AutoAuth: Streamlining Claims Processing with Azure AI
+# 🤖 AutoAuth for Insurance: Accelerating Insurance Underwriting with Azure AI
 
-![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
-![GitHub stars](https://img.shields.io/github/stars/pablosalvador10/gbb-ai-hls-fsi-factory-claims-autoauth?style=social)
-![Issues](https://img.shields.io/github/issues/pablosalvador10/gbb-ai-hls-fsi-factory-claims-autoauth)
-![License](https://img.shields.io/github/license/pablosalvador10/gbb-ai-hls-fsi-factory-claims-autoauth)
-
-> 🚀 **Welcome! Fast-track insurance claim processing with next-gen AI, advanced reasoning models, and effortless deployment on Azure.**
+> 🚀 **Welcome! AutoAuth is designed to revolutionize insurance underwriting by leveraging next-gen Azure AI, structured reasoning, and hybrid cross-referencing automation.**
 
 ## 📚 Table of Contents
 
-- [Overview](#-overview)
+- [Did you know?](#-did-you-know?)
 - [Introducing AutoAuth for the Insurance Industry](#-introducing-autoauth-for-the-insurance-industry)
 - [Contributors & License](#-contributors--license)
 
-## 🌍 Overview
+## 🔍 Did you know?
 
-Insurance claim processing can be slow and labor-intensive, involving manual reviews, extensive paperwork, and multiple verification steps. Common challenges include:
+The insurance industry faces significant challenges in underwriting efficiency. Consider these facts:
 
-- **Operational Costs**: Manually reviewing and adjudicating claims is resource-intensive and prone to human error.  
-- **Slower Turnaround**: Delays in approvals directly impact customer satisfaction and can lead to increased escalations.  
-- **Policy Complexity**: Each claim must be evaluated against varying policy guidelines, which can be time-consuming without automation.
+- **Underwriting Delays**: Auto underwriting decisions take 3–7 business days, even for standard risk classes.  
+  *Source: [McKinsey & Company, “The future of underwriting”]*
 
-AutoAuth leverages Azure AI to bring an **intelligent, automated** approach—reducing human overhead, cutting costs, and accelerating claims outcomes.
+- **Manual Workload**: Underwriters spend 60–70% of their time manually reviewing and re-entering information from multiple sources.  
+  *Source: [Deloitte Insights, “Automating insurance underwriting”]*
 
-**Note:** This solution builds on proven SOTA AI Azure services and techniques like OCR, retrieval-augmented generation (RAG), and agentic workflows to streamline claim reviews.
+- **Operational Delays**: Manual underwriting contributes to 20–30% of delays in policy issuance for personal and commercial lines.  
+  *Source: [Capgemini, “World InsurTech Report”]*
+
+- **Cost of Errors**: Inaccurate data entry during manual processes leads to $17B–$25B in mispriced premiums annually across the P&C industry.  
+  *Source: [Gartner, “AI in Insurance Underwriting: Cost of Inaccuracy”]*
+
+By automating underwriting with AI insurers can reduce processing time by **80%** and cut operational costs by up to **30%**. AutoAuth  for insurance leverages Azure AI to bring an **intelligent, automated** approach—reducing human overhead, cutting costs, and accelerating claims and underwr outcomes.
 
 ## 🤖 Introducing AutoAuth for the Insurance Industry
 
-AutoAuth transforms insurance claim processing through:
+AutoAuth revolutionizes the underwriting process by automating key stages, ensuring faster, more accurate, and transparent decisions:
 
-1. **Automated Document Intake**: OCR and Large Language Models (LLMs) extract claim details from unstructured documents.  
-2. **Policy & Criteria Matching**: Intelligent retrieval surfaces relevant policy rules, ensuring swift compliance checks.  
-3. **Advanced Reasoning**: AI models evaluate claim data against guidelines, recommending Approve/Deny or requesting clarifications—all with transparent reasoning logs.
+1. **Automated Document Intake**:  
+   Leverages OCR and Large Language Models (LLMs) to extract critical underwriting data from unstructured documents such as applications, medical records, and financial statements.
 
-## 🤝 Contributors & License
+2. **Policy & Criteria Matching**:  
+   Uses intelligent retrieval to cross-reference extracted data with underwriting guidelines, policy rules, and risk criteria, ensuring compliance and consistency.
 
-### Contributors
+3. **Advanced Underwriting Decisions**:  
+   AI models analyze the matched data to recommend Approve/Deny decisions or flag cases for further review. Each decision is accompanied by detailed reasoning logs, providing transparency and auditability.
 
-<table>
-<tr>
-    <td align="center" style="word-wrap: break-word; width: 150px; height: 150px">
-        <a href=https://github.com/pablosalvador10>
-            <img src=https://avatars.githubusercontent.com/u/31255154?v=4 width="100" style="border-radius:50%;padding-top:10px" alt="Pablo Salvador Lopez"/>
-            <br />
-            <sub style="font-size:14px"><b>Pablo Salvador Lopez</b></sub>
-        </a>
-    </td>
-</tr>
-</table>
+By streamlining the underwriting process, AutoAuth reduces manual effort, accelerates decision-making, and minimizes errors, enabling insurers to issue policies faster and more efficiently.
 
-**License:** [MIT License](./LICENSE)
+### License
+
+This project is licensed under the [MIT License](./LICENSE).
